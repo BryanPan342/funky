@@ -18,8 +18,6 @@ class Scene {
     this.canvas = document.getElementById(styles.scene) as HTMLCanvasElement;
 
     this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.Fog(0x020F17, 50, 2000);
-
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       alpha: true,
@@ -98,24 +96,15 @@ class Scene {
   }
 
   private generateStars(num: number): void {
-    const geometry = new THREE.BufferGeometry();
-    const material = new THREE.PointsMaterial({ color: 0xc4c4c4 });
-    let vertices = new Float32Array(num * 3);
-    geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
-    const positions = geometry.attributes.position.array;
-    Array(num).fill(0).map((_, i) => {
-      const star = new THREE.Vector3();
-      star.x = THREE.MathUtils.randFloatSpread(2000);
-      star.y = THREE.MathUtils.randFloatSpread(2000);
-      star.z = THREE.MathUtils.randFloatSpread(2000);
-
-      positions[i * 3] = star.x;
-      positions[i * 3 + 1] = star.y;
-      positions[i * 3 + 2] = star.z;
+    const geometry = new THREE.SphereGeometry(1, 6, 6);
+    const material = new THREE.MeshBasicMaterial({ color: 0xc4c4c4 })
+    Array(num).fill(0).map(() => {
+      const mesh = new THREE.Mesh(geometry, material);
+      const x = THREE.MathUtils.randFloatSpread(window.innerWidth);
+      const y = THREE.MathUtils.randFloatSpread(window.innerHeight);
+      mesh.position.set(x, y, (Math.random() - 0.75) * 1500);
+      this.stars.add(mesh);
     });
-
-    const mesh = new THREE.Points(geometry, material);
-    this.stars.add(mesh);
   }
 }
 
