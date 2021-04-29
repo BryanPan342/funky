@@ -1,4 +1,4 @@
-@function radialSky($position, $opacity) {
+@function radial-sky($position, $opacity) {
   @return radial-gradient(
     circle farthest-corner at $position top,
     transparentize(#020f17, $opacity) 0%,
@@ -8,7 +8,17 @@
     transparentize(#00272d, $opacity) 81.77%,
     transparentize(#003337, $opacity) 89.58%,
     transparentize(#133735, $opacity) 100%,
-  )
+  );
+}
+
+#nightSky {
+  width: 100%;
+  height: 100vh;
+  background:
+    radial-sky(left, 0.8),
+    radial-sky(right, 0.83),
+    radial-sky(center, 0.65);
+  z-index: 0;
 }
 
 #scene {
@@ -16,8 +26,4 @@
   height: 100vh;
   position: absolute;
   z-index: 1;
-  background:
-    radialSky(left, .80),
-    radialSky(right, .83),
-    radialSky(center, .65),
 }
