@@ -3,10 +3,35 @@
   height: 100vh;
   position: absolute;
   z-index: 1;
-
-  background: radial-gradient(
-    ellipse farthest-corner at left top,
-    #020F17 0%,
-    #01141C 42.9%, #00171E 53.65%, #001820 69.79%, #00272D 81.77%, #003337 89.58%, #133735 100%
-  );
+  background:
+    radial-gradient(
+      circle farthest-corner at left top,
+      #020f1743 0%,
+      #01141c43 42.9%,
+      #00171e43 53.65%,
+      #00182043 69.79%,
+      #00272d43 81.77%,
+      #00333743 89.58%,
+      #13373543 100%,
+    ),
+    radial-gradient(
+      circle farthest-corner at right top,
+      #020f1743 0%,
+      #01141c43 42.9%,
+      #00171e43 53.65%,
+      #00182043 69.79%,
+      #00272d43 81.77%,
+      #00333743 89.58%,
+      #13373543 100%,
+    ),
+    radial-gradient(
+      circle farthest-corner at center top,
+      #020f1753 0%,
+      #01141c53 42.9%,
+      #00171e53 53.65%,
+      #00182053 69.79%,
+      #00272d53 81.77%,
+      #00333753 89.58%,
+      #13373553 100%,
+    );
 }
