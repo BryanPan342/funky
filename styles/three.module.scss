@@ -1,37 +1,23 @@
+@function radialSky($position, $opacity) {
+  @return radial-gradient(
+    circle farthest-corner at $position top,
+    transparentize(#020f17, $opacity) 0%,
+    transparentize(#01141c, $opacity) 42.9%,
+    transparentize(#00171e, $opacity) 53.65%,
+    transparentize(#001820, $opacity) 69.79%,
+    transparentize(#00272d, $opacity) 81.77%,
+    transparentize(#003337, $opacity) 89.58%,
+    transparentize(#133735, $opacity) 100%,
+  )
+}
+
 #scene {
   width: 100vw;
   height: 100vh;
   position: absolute;
   z-index: 1;
   background:
-    radial-gradient(
-      circle farthest-corner at left top,
-      #020f1743 0%,
-      #01141c43 42.9%,
-      #00171e43 53.65%,
-      #00182043 69.79%,
-      #00272d43 81.77%,
-      #00333743 89.58%,
-      #13373543 100%,
-    ),
-    radial-gradient(
-      circle farthest-corner at right top,
-      #020f1743 0%,
-      #01141c43 42.9%,
-      #00171e43 53.65%,
-      #00182043 69.79%,
-      #00272d43 81.77%,
-      #00333743 89.58%,
-      #13373543 100%,
-    ),
-    radial-gradient(
-      circle farthest-corner at center top,
-      #020f1753 0%,
-      #01141c53 42.9%,
-      #00171e53 53.65%,
-      #00182053 69.79%,
-      #00272d53 81.77%,
-      #00333753 89.58%,
-      #13373553 100%,
-    );
+    radialSky(left, .80),
+    radialSky(right, .83),
+    radialSky(center, .65),
 }
