@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import * as THREE from 'three';
 import { TweenMax as TM } from 'gsap';
 
-import styles from '../styles/three.module.scss';
+import styles from '../styles/Three.module.scss';
 
 class Scene {
   private perspective: number;
@@ -116,10 +116,8 @@ function Three(): JSX.Element {
   }, []);
 
   return (
-    <div>
-      <canvas id={styles.scene}/>
-    </div>
-  )
+    <canvas id={styles.scene}/>
+  );
 }
 
 export default Three;
