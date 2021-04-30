@@ -14,11 +14,11 @@
 #nightSky {
   width: 100%;
   height: 100vh;
-  background:
-    radial-sky(left, 0.8),
-    radial-sky(right, 0.83),
-    radial-sky(center, 0.65);
   z-index: 0;
+  // background:
+  //   radial-sky(left, 0.8),
+  //   radial-sky(right, 0.83),
+  //   radial-sky(center, 0.65);
 }
 
 #scene {
